@@ -1,6 +1,7 @@
 import { Button } from './ui/button';
 import { AnimatedText } from './AnimatedText';
 import { Building2, Landmark, Wheat, Building, TrendingUp, ArrowRight, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const dynamicWords = [
   'Smart Strategies',
@@ -21,24 +22,28 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 lg:px-20 py-6">
+      {/* Navigation - Sticky */}
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-12 lg:px-20 py-6 bg-white/70 backdrop-blur-md border-b border-slate-200">
         <div className="font-['JetBrains_Mono'] font-semibold text-xl md:text-2xl text-slate-900">
           Harbor<span className="text-indigo-600">Yield</span>
         </div>
         
-        <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 font-bold">
-          <a href="#" className="text-slate-700 hover:text-slate-900 transition-colors">Assets</a>
-          <a href="#" className="text-slate-700 hover:text-slate-900 transition-colors">Strategies</a>
-          <a href="#" className="text-slate-700 hover:text-slate-900 transition-colors">For issuers</a>
+        <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 text-[20px]">
+          <Link to="/" className="text-slate-900 font-semibold underline transition-colors">Home</Link>
+          <Link to="/manifesto" className="text-slate-700 hover:text-slate-900 transition-colors">Manifesto</Link>
+          <Link to="/strategies" className="text-slate-700 hover:text-slate-900 transition-colors">Strategies</Link>
+          <Link to="/issuers" className="text-slate-700 hover:text-slate-900 transition-colors">List an RWA</Link>
         </div>
 
         <Button 
-          size="default" 
-          className="bg-slate-900 hover:bg-slate-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all font-sans"
+          size="lg" 
+          className="bg-slate-900 hover:bg-slate-800 text-white rounded-lg shadow-md hover:shadow-lg transition-all font-sans px-6 py-6 text-base"
+          asChild
         >
-          Launch App
-          <ArrowRight className="w-4 h-4 ml-1" />
+          <a href="https://app.harbory.xyz/" target="_blank" rel="noopener noreferrer">
+            Launch App
+            <ArrowRight className="w-5 h-5 ml-1" />
+          </a>
         </Button>
       </nav>
 
@@ -62,17 +67,23 @@ export function Hero() {
             <Button 
               size="lg" 
               className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all font-sans"
+              asChild
             >
-              Launch App
-              <ArrowRight className="w-5 h-5" />
+              <a href="https://app.harbory.xyz/" target="_blank" rel="noopener noreferrer">
+                Launch App
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               className="px-8 py-6 text-lg rounded-xl border-2 border-slate-900 hover:border-slate-700 bg-white hover:bg-slate-50 text-slate-900 transition-all font-sans"
+              asChild
             >
-              <Globe className="w-5 h-5" />
-              Explore Assets
+              <a href="https://app.harbory.xyz/" target="_blank" rel="noopener noreferrer">
+                <Globe className="w-5 h-5" />
+                Explore Assets
+              </a>
             </Button>
           </div>
 

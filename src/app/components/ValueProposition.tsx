@@ -1,6 +1,6 @@
 import { ShoppingBasket, LineChart } from 'lucide-react';
 import { motion } from 'motion/react';
-import illustrationImage from '@/assets/fe46500f46b0b25b9951782a61ae6e08d15a2b60.png';
+import illustrationImage from 'figma:asset/fe46500f46b0b25b9951782a61ae6e08d15a2b60.png';
 
 export function ValueProposition() {
   return (
